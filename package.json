@@ -3,6 +3,8 @@
   "version": "0.0.2",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "build-rust-android": "cd rust/ironbelly && make android",
+    "android": "npm run build-rust-android && react-native run-android",
     "lint": "./node_modules/.bin/eslint src/**/*.js"
   },
   "hooks": {

@@ -1,5 +1,5 @@
 [package]
-name = "ironbelly-wallet"
+name = "ironbelly_wallet"
 version = "0.1.0"
 authors = ["Ivan Sorokin <ivan@sorokin.io>"]
 description = "Ironbelly - Grin mobile wallet"
@@ -7,7 +7,7 @@ publish = false
 edition = "2018"
 
 [dependencies]
-libc = "0.2.45"
+libc = "0.2"
 blake2-rfc = "0.2"
 chrono = "0.4.4"
 clap = "2.31"
@@ -21,6 +21,7 @@ serde_derive = "1"
 log = "0.4"
 term = "0.5"
 prettytable-rs = "0.7"
+jni = { version = "0.5.1", optional = true, default-features = false }
 
 grin_wallet = { git = "https://github.com/mimblewimble/grin", rev = "d6936f0ae7b1a7e7585df5fd712c217be3172a2d" }
 grin_core = { git = "https://github.com/mimblewimble/grin", rev = "d6936f0ae7b1a7e7585df5fd712c217be3172a2d" }
@@ -33,10 +34,13 @@ reqwest = "0.9"
 flate2 = "1.0"
 tar = "0.4"
 
+[features]
+default = ["jni"]
+
 
 [lib]
-name = "wallet"
-crate-type = ["staticlib"]
+name = "ironbelly_wallet"
+crate-type = ["staticlib", "cdylib"]
 
 [patch.crates-io]
 croaring = { path = "./croaring-rs" }

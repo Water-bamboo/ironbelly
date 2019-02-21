@@ -12,16 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+extern crate libc;
 use grin_core::global::ChainTypes;
 use grin_keychain::ExtKeychain;
 use grin_util::file::get_first_line;
 use grin_util::Mutex;
-use grin_wallet::libwallet::api::{APIForeign, APIOwner};
-use grin_wallet::libwallet::types::{NodeClient, WalletInst};
-use grin_wallet::{
-    instantiate_wallet, FileWalletCommAdapter, HTTPNodeClient, LMDBBackend, WalletConfig,
-    WalletSeed,
-};
+// use grin_wallet::libwallet::api::{APIForeign, APIOwner};
+// use grin_wallet::libwallet::types::{NodeClient, WalletInst};
+// use grin_wallet::{
+//     instantiate_wallet, FileWalletCommAdapter, HTTPNodeClient, LMDBBackend, WalletConfig,
+//     WalletSeed,
+// };
 use serde::{Deserialize, Serialize};
 use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
